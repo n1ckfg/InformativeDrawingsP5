@@ -64,10 +64,7 @@ public class InformativeDrawingsNetwork extends BaseNeuralNetwork<ImageResult> {
   }
  
   private void matToImage(Mat mat, PImage img) {
-    mat = multiply(mat, 0.5).asMat();
-    mat = add(mat, new Scalar(0.5)).asMat();
-    mat = multiply(mat, 255).asMat();
-    
+    mat = multiply(mat, 255).asMat();   
     mat.convertTo(mat, CV_8U);
     CvProcessingUtils.toPImage(mat, img);
   }
