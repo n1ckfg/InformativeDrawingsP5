@@ -29,8 +29,9 @@ public class InformativeDrawingsNetwork extends BaseNeuralNetwork<ImageResult> {
   @Override
   public boolean setup() {
     net = readNetFromONNX(model.toAbsolutePath().toString());
-
-    DeepVision.enableDesiredBackend(net);
+    
+    // Older versions of DeepVision can't use this
+    //DeepVision.enableDesiredBackend(net);
 
     return true;
   }
